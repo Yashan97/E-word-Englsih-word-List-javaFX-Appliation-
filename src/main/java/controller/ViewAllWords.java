@@ -1,12 +1,15 @@
 package controller;
 
+import db.DBConnection;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import model.WordList;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -32,20 +35,27 @@ public class ViewAllWords {
     }
 
     private void loadTable() {
-        Connection connection = null;
         ResultSet resultSet;
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/english_words1", "root", "1234");
+            Connection connection = DBConnection.getInstance().getConnection();
             resultSet = connection.createStatement().executeQuery("SELECT * FROM Wordlist");
             while (resultSet.next()){
                     wordLists.add(new WordList(
                             resultSet.getInt(1),
                             resultSet.getString(2),
                             resultSet.getString(3),
-                            resultSet.getString(4),
-                            resultSet.getInt(5)
+                            resultSet.getString(4)
                     ));
+                colWord.setCellValueFactory(new PropertyValueFactory<>("new_word"));
+                colMeaning.setCellValueFactory(new PropertyValueFactory<>("meaningOfWord"));
+                colSinhala.setCellValueFactory(new PropertyValueFactory<>("sinhala_Meaning"));
+                ObservableList<WordList> observableList = FXCollections.observableArrayList();
+                wordLists.forEach(wordList -> {
+                    observableList.add(wordList);
+                });
+                tblAllWord.setItems(observableList);
             }
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
