@@ -4,23 +4,31 @@ import db.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.WordList;
 
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class ViewAllWords {
+public class ViewAllWords implements Initializable {
 
     public TableColumn colSinhala;
     public TableColumn colMeaning;
     public TableColumn colWord;
     public TableView tblAllWord;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        loadTable();
+    }
 
     List<WordList> wordLists =new ArrayList<>();
     public void btnSearchTop(ActionEvent actionEvent) {
@@ -61,4 +69,6 @@ public class ViewAllWords {
         }
 
     }
+
+
 }
