@@ -12,7 +12,7 @@
       <AnchorPane layoutX="-6.0" prefHeight="522.0" prefWidth="258.0" style="-fx-background-radius: 0px  50px 50px 0px; -fx-background-color: #34495e;">
          <children>
             <JFXButton layoutX="-18.0" layoutY="180.0" onAction="#btnHome" prefHeight="34.0" prefWidth="162.0" style="-fx-background-color: #3498db; -fx-background-radius: 30px;" text="Home" />
-            <JFXButton layoutX="-13.0" layoutY="227.0" prefHeight="34.0" prefWidth="207.0" style="-fx-background-color: #2ecc71; -fx-background-radius: 30px;" text="Add" />
+            <JFXButton layoutX="-13.0" layoutY="227.0" onAction="#btnAdd" prefHeight="34.0" prefWidth="207.0" style="-fx-background-color: #2ecc71; -fx-background-radius: 30px;" text="Add" />
             <JFXButton layoutX="-23.0" layoutY="275.0" onAction="#btnView" prefHeight="34.0" prefWidth="207.0" style="-fx-background-color: #9b59b6; -fx-background-radius: 30px;" text="View" />
             <JFXButton layoutX="-13.0" layoutY="321.0" prefHeight="34.0" prefWidth="207.0" style="-fx-background-color: #f1c40f; -fx-background-radius: 30px;" text="Update" />
             <JFXButton layoutX="-51.0" layoutY="368.0" prefHeight="34.0" prefWidth="207.0" style="-fx-background-color: #e74c3c; -fx-background-radius: 30px;" text="Delete" />

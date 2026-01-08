@@ -30,4 +30,12 @@ public class MainFormController {
         System.out.println("Search clicked");
     }
 
+
+    public void btnAdd(ActionEvent actionEvent) throws IOException {
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/addForm.fxml"))));
+        stage.setTitle("Add New Words");
+        stage.show();
+
+    }
 }
