@@ -4,6 +4,7 @@ import db.DBConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -35,7 +36,11 @@ public class AddFormController {
         psTm.setString(2,txtMeaningOfWord.getText());
         psTm.setString(3,txtSinhalaMean.getText());
 
-        psTm.executeUpdate();
+        if (psTm.executeUpdate()>0){
+            new Alert(Alert.AlertType.INFORMATION,"Add New Word !").show();
+        }else{
+            new Alert(Alert.AlertType.ERROR,"ERROR").show();
+        }
 
     }
 
