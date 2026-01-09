@@ -3,6 +3,8 @@ package controller;
 import db.DBConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
@@ -20,13 +22,28 @@ public class AddFormController {
     public TextField txtMeaningOfWord;
     public TextField txtSinhalaMean;
 
-    public void btnSearchTop(ActionEvent actionEvent) {
+    public void switchWindow(ActionEvent event, String fxmlPath, String title) throws IOException {
+
+
+        Stage newStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource(fxmlPath));
+        newStage.setScene(new Scene(root));
+        newStage.setTitle(title);
+        newStage.show();
+
+
+        Stage currentStage = (Stage) ((Node) event.getSource())
+                .getScene()
+                .getWindow();
+        currentStage.close();
     }
 
-    public void btnHome(ActionEvent actionEvent) throws IOException {
-        Stage stage = new Stage();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/mainFxmlForm.fxml"))));
-        stage.show();
+    public void btnSearchTop(ActionEvent actionEvent) {
+
+    }
+
+    public void btnHome(ActionEvent event) throws IOException {
+        switchWindow(event, "/view/mainFxmlForm.fxml", "Home Form");
     }
 
     public void btnAddNewWords(ActionEvent actionEvent) throws SQLException {
@@ -45,4 +62,7 @@ public class AddFormController {
     }
 
 
+    public void btnView(ActionEvent event) throws IOException {
+        switchWindow(event,"/view/viewAllWords.fxml", "View All Word");
+    }
 }

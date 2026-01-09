@@ -25,7 +25,6 @@
         <AnchorPane layoutX="-11.0" prefHeight="522.0" prefWidth="258.0" style="-fx-background-radius: 0px  50px 50px 0px; -fx-background-color: #34495e;">
             <children>
                 <JFXButton alignment="CENTER" layoutX="-18.0" layoutY="180.0" onAction="#btnHome" prefHeight="34.0" prefWidth="170.0" style="-fx-background-color: #3498db; -fx-background-radius: 30px;" text="Home" />
-                <JFXButton layoutX="-13.0" layoutY="227.0" prefHeight="34.0" prefWidth="207.0" style="-fx-background-color: #2ecc71; -fx-background-radius: 30px;" text="Add" />
                 <JFXButton layoutX="-23.0" layoutY="272.0" prefHeight="34.0" prefWidth="207.0" style="-fx-background-color: #f1c40f; -fx-background-radius: 30px;" text="Update" />
                 <JFXButton alignment="CENTER" layoutX="-36.0" layoutY="319.0" prefHeight="34.0" prefWidth="201.0" style="-fx-background-color: #e74c3c; -fx-background-radius: 30px;" text="Delete" />
                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f1c40f" height="107.0" layoutX="-32.0" layoutY="21.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="272.0" />
@@ -39,11 +38,6 @@
                         <Font name="System Bold" size="14.0" />
                     </font>
                 </Label>
-                <ImageView fitHeight="26.0" fitWidth="20.0" layoutX="23.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
-                    <image>
-                        <Image url="@../Icon/add.png" />
-                    </image>
-                </ImageView>
                 <ImageView fitHeight="26.0" fitWidth="20.0" layoutX="22.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
                     <image>
                         <Image url="@../Icon/home.png" />
@@ -59,6 +53,12 @@
                         <Image url="@../Icon/Delete.png" />
                     </image>
                 </ImageView>
+            <JFXButton layoutX="-16.0" layoutY="226.0" onAction="#btnView" prefHeight="34.0" prefWidth="207.0" style="-fx-background-color: #9b59b6; -fx-background-radius: 30px;" text="View" />
+            <ImageView fitHeight="26.0" fitWidth="29.0" layoutX="20.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
+               <image>
+                  <Image url="@../Icon/view.png" />
+               </image>
+            </ImageView>
             </children>
         </AnchorPane>
         <AnchorPane layoutX="263.0" layoutY="70.0" prefHeight="452.0" prefWidth="582.0" style="-fx-background-color: #34495e; -fx-background-radius: 50px 0px 0px 50px;">
