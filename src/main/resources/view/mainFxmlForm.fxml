@@ -3,6 +3,8 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
@@ -22,34 +24,101 @@
                   <Font name="System Bold" size="21.0" />
                </font>
             </Label>
-            <Label layoutX="32.0" layoutY="55.0" prefHeight="38.0" prefWidth="170.0" text="Collection System " textFill="#534d4d">
+            <Label layoutX="25.0" layoutY="58.0" prefHeight="38.0" prefWidth="126.0" text="Collection System " textFill="#534d4d">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
+            <ImageView fitHeight="22.0" fitWidth="19.0" layoutX="15.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/home.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="22.0" fitWidth="19.0" layoutX="14.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/add.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="22.0" fitWidth="19.0" layoutX="13.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/view.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="22.0" fitWidth="19.0" layoutX="13.0" layoutY="329.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/upgrade.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="22.0" fitWidth="19.0" layoutX="12.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/Delete.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="66.0" fitWidth="62.0" layoutX="155.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/book.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="259.0" prefHeight="58.0" prefWidth="590.0" style="-fx-background-color: #34495e; -fx-background-radius: 0px 0px 0px 50px;">
          <children>
             <TextField layoutX="258.0" layoutY="16.0" prefHeight="26.0" prefWidth="218.0" promptText="Search " style="-fx-background-radius: 10px;" />
-            <JFXButton layoutX="500.0" layoutY="16.0" onAction="#btnSearchTop" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #f1c40f; -fx-background-radius: 30px;" text="Search" />
+            <JFXButton layoutX="456.0" layoutY="16.0" onAction="#btnSearchTop" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #f1c40f; -fx-background-radius: 30px;" text="Search" />
          </children></AnchorPane>
-      <AnchorPane layoutX="267.0" layoutY="70.0" prefHeight="452.0" prefWidth="582.0" style="-fx-background-color: #34495e; -fx-background-radius: 50px 0px 0px 50px;">
+      <AnchorPane layoutX="267.0" layoutY="71.0" prefHeight="452.0" prefWidth="582.0" style="-fx-background-color: #34495e; -fx-background-radius: 50px 0px 0px 50px;">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3498db78" height="93.0" layoutX="247.0" layoutY="32.0" stroke="WHITE" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="322.0" />
-            <Label layoutX="272.0" layoutY="87.0" prefHeight="22.0" prefWidth="194.0" text="You Have Collecting Words" textFill="WHITE">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3498db78" height="93.0" layoutX="101.0" layoutY="32.0" stroke="WHITE" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="468.0" />
+            <Label layoutX="160.0" layoutY="87.0" prefHeight="22.0" prefWidth="194.0" text="You Have Collecting Words" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="lblCount" alignment="CENTER" layoutX="443.0" layoutY="56.0" prefHeight="46.0" prefWidth="111.0" text="20" textFill="WHITE">
+            <Label fx:id="lblCount" alignment="CENTER" layoutX="443.0" layoutY="56.0" prefHeight="46.0" prefWidth="111.0" text="0" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="31.0" />
                </font>
             </Label>
-            <Label layoutX="270.0" layoutY="45.0" prefHeight="18.0" prefWidth="162.0" text="Yashan" textFill="WHITE">
+            <Label layoutX="128.0" layoutY="45.0" prefHeight="18.0" prefWidth="162.0" text="Yashan" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="35.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="69.0" fitWidth="74.0" layoutX="374.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/cal.png" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5ca07e0" height="69.0" layoutX="25.0" layoutY="146.0" stroke="WHITE" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="285.0" />
+            <Label layoutX="41.0" layoutY="159.0" prefHeight="38.0" prefWidth="126.0" text="Status" textFill="#fcfcfc">
+               <font>
+                  <Font name="Arial" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblstatus" layoutX="205.0" layoutY="161.0" prefHeight="38.0" prefWidth="91.0" text="Week">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="46.0" fitWidth="55.0" layoutX="143.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/prioritize_7778962.png" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#26f507e0" height="69.0" layoutX="165.0" layoutY="233.0" stroke="WHITE" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="403.0" />
+            <Label layoutX="192.0" layoutY="248.0" prefHeight="38.0" prefWidth="152.0" text="Last Seen" textFill="#fcfcfc">
+               <font>
+                  <Font name="Arial" size="30.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="62.0" fitWidth="62.0" layoutX="339.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/clock_621685.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblDate" layoutX="404.0" layoutY="248.0" prefHeight="38.0" prefWidth="135.0" text="10.30">
+               <font>
+                  <Font name="Arial" size="13.0" />
                </font>
             </Label>
          </children>

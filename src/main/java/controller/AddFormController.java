@@ -55,6 +55,9 @@ public class AddFormController {
 
         if (psTm.executeUpdate()>0){
             new Alert(Alert.AlertType.INFORMATION,"Add New Word !").show();
+            txtNewWord.setText("");
+            txtMeaningOfWord.setText("");
+            txtSinhalaMean.setText("");
         }else{
             new Alert(Alert.AlertType.ERROR,"ERROR").show();
         }

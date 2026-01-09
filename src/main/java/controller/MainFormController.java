@@ -8,20 +8,21 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ResourceBundle;
+
 
 public class MainFormController implements Initializable {
 
     public Label lblCount;
+    public Label lblstatus;
+    public Label lblDate;
 
     public void switchWindow(ActionEvent event, String fxmlPath, String title) throws IOException {
 
@@ -64,6 +65,25 @@ public class MainFormController implements Initializable {
         if (resultSet.next()){
             int count = resultSet.getInt(1);
             lblCount.setText(String.valueOf(count));
+            if (count<=1000){
+                lblstatus.setText("Weak");
+                lblstatus.setTextFill(Color.RED);
+            }else {
+                lblstatus.setText("Strong");
+                lblstatus.setTextFill(Color.GREEN);
+            }
+
+
+        }
+    }
+    
+    public void showLastSeen() throws SQLException {
+        Connection connection = DBConnection.getInstance().getConnection();
+        PreparedStatement psTm = connection.prepareStatement("SELECT MAX(created_date)FROM wordlist");
+        ResultSet resultSet = psTm.executeQuery();
+        if (resultSet.next()){
+            Timestamp timestamp1 = resultSet.getTimestamp(1);
+            lblDate.setText(String.valueOf(timestamp1));
         }
     }
 
@@ -71,6 +91,11 @@ public class MainFormController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             countWordList();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            showLastSeen();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
