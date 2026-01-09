@@ -1,10 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UpdateFormController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="515.0" prefWidth="841.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UpdateFormController">
    <children>
-      <Button layoutX="225.0" layoutY="107.0" mnemonicParsing="false" text="Button" />
+      <AnchorPane layoutX="258.0" prefHeight="98.0" prefWidth="583.0" style="-fx-background-color: #34495e; -fx-background-radius: 0px 0px 0px 50px;">
+         <children>
+            <AnchorPane layoutX="123.0" layoutY="16.0" prefHeight="61.0" prefWidth="459.0" style="-fx-background-color: #f1c40f; -fx-background-radius: 50px 0px 0px 50px;">
+               <children>
+                  <Label alignment="CENTER" layoutX="120.0" layoutY="12.0" prefHeight="34.0" prefWidth="339.0" text="Update Word Here">
+                     <font>
+                        <Font name="Cambria Math" size="29.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="50.0" fitWidth="62.0" layoutX="82.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icon/bookadd.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="-11.0" prefHeight="522.0" prefWidth="258.0" style="-fx-background-radius: 0px  50px 50px 0px; -fx-background-color: #34495e;">
+         <children>
+            <JFXButton alignment="CENTER" layoutX="-18.0" layoutY="180.0" onAction="#btnHome" prefHeight="34.0" prefWidth="170.0" style="-fx-background-color: #3498db; -fx-background-radius: 30px;" text="Home" />
+            <JFXButton layoutX="-23.0" layoutY="272.0" onAction="#btnAdd" prefHeight="34.0" prefWidth="207.0" style="-fx-background-color: #2ecc71; -fx-background-radius: 30px;" text="Add" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f1c40f" height="107.0" layoutX="-32.0" layoutY="21.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="272.0" />
+            <Label layoutX="16.0" layoutY="34.0" prefHeight="38.0" prefWidth="126.0" text="E-WORDS " textFill="#534d4d">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="20.0" layoutY="57.0" prefHeight="38.0" prefWidth="170.0" text="Collection System " textFill="#534d4d">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="26.0" fitWidth="20.0" layoutX="22.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
+               <image>
+                  <Image url="@../Icon/home.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="26.0" fitWidth="20.0" layoutX="23.0" layoutY="279.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
+               <image>
+                  <Image url="@../Icon/add.png" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="-16.0" layoutY="226.0" onAction="#btnView" prefHeight="34.0" prefWidth="207.0" style="-fx-background-color: #9b59b6; -fx-background-radius: 30px;" text="View" />
+            <ImageView fitHeight="26.0" fitWidth="29.0" layoutX="20.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
+               <image>
+                  <Image url="@../Icon/view.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="68.0" fitWidth="74.0" layoutX="150.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/book.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="258.0" layoutY="124.0" prefHeight="298.0" prefWidth="583.0" style="-fx-background-color: #34495e; -fx-background-radius: 50px 0px 0px 50px;">
+         <children>
+            <TextField fx:id="txtNewWord" layoutX="32.0" layoutY="64.0" prefHeight="26.0" prefWidth="218.0" promptText="Enter new Word" style="-fx-background-radius: 10px;" />
+            <TextField fx:id="txtMeaningOfWord" layoutX="32.0" layoutY="109.0" prefHeight="26.0" prefWidth="258.0" promptText="Example with Word" style="-fx-background-radius: 10px;" />
+            <TextField fx:id="txtSinhalaMean" layoutX="32.0" layoutY="155.0" prefHeight="26.0" prefWidth="218.0" promptText="Sinhala  Meaning " style="-fx-background-radius: 10px;" />
+            <AnchorPane layoutX="376.0" layoutY="60.0" prefHeight="34.0" prefWidth="207.0" style="-fx-background-color: #ff9f43; -fx-background-radius: 50px 0px 0px 50px;">
+               <children>
+                  <ImageView fitHeight="26.0" fitWidth="37.0" layoutX="22.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icon/available.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lblAvailable" alignment="CENTER" layoutX="66.0" layoutY="5.0" prefHeight="20.0" prefWidth="117.0" text="Status">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="376.0" layoutY="105.0" prefHeight="34.0" prefWidth="207.0" style="-fx-background-color: DE1A58; -fx-background-radius: 50px 0px 0px 50px;">
+               <children>
+                  <ImageView fitHeight="26.0" fitWidth="37.0" layoutX="22.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icon/available.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lblId" alignment="CENTER" layoutX="56.0" layoutY="5.0" prefHeight="20.0" prefWidth="117.0" text="Id">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="258.0" layoutY="437.0" prefHeight="78.0" prefWidth="583.0" style="-fx-background-color: #34495e; -fx-background-radius: 50px 0px 0px 0px;">
+         <children>
+            <JFXButton fx:id="btnUpdate" layoutX="467.0" layoutY="15.0" onAction="#btnUpdateWord" prefHeight="38.0" prefWidth="108.0" style="-fx-background-color: #2ecc71; -fx-background-radius: 30px;" text="Update" />
+            <JFXButton layoutX="352.0" layoutY="16.0" onAction="#btnSearchQuic" prefHeight="38.0" prefWidth="108.0" style="-fx-background-color: #f1c40f; -fx-background-radius: 30px;" text="Search" />
+            <JFXButton fx:id="btnDelete" alignment="CENTER" layoutX="227.0" layoutY="15.0" onAction="#btnDeleteWord" prefHeight="38.0" prefWidth="117.0" style="-fx-background-color: #e74c3c; -fx-background-radius: 30px;" text="Delete" />
+            <ImageView fitHeight="26.0" fitWidth="20.0" layoutX="238.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
+               <image>
+                  <Image url="@../Icon/Delete.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="26.0" fitWidth="20.0" layoutX="474.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
+               <image>
+                  <Image url="@../Icon/upgrade.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="26.0" fitWidth="20.0" layoutX="360.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
+               <image>
+                  <Image url="@../Icon/search.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

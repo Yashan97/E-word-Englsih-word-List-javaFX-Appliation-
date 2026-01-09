@@ -2,6 +2,7 @@ package controller;
 
 import db.DBConnection;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -58,7 +59,30 @@ public class SearchFormController {
             lblnewWord.setText(resultSet.getString("new_word"));
             lblExample.setText(resultSet.getString(3));
             lblSinhalaMean.setText(resultSet.getString(4));
+        }else {
+            new Alert(Alert.AlertType.ERROR,"Can't Find!").show();
+            txtSearch.setText("");
         }
 
+    }
+
+    public void btnDelete(ActionEvent event) {
+        try {
+            DBConnection.getInstance().switchWindow(event, "/view/UpdateFormController.fxml","Update Form");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void btnUpdate(ActionEvent event) {
+        try {
+            DBConnection.getInstance().switchWindow(event, "/view/UpdateFormController.fxml","Update Form");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

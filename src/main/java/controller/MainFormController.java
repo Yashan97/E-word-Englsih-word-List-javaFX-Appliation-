@@ -93,4 +93,24 @@ public class MainFormController implements Initializable {
             throw new RuntimeException(e);
         }
     }
+
+    public void btnUpdate(ActionEvent event) {
+        try {
+            DBConnection.getInstance().switchWindow(event, "/view/UpdateFormController.fxml" ,"Update Form");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void btnDelete(ActionEvent event) {
+        try {
+            DBConnection.getInstance().switchWindow(event, "/view/UpdateFormController.fxml","Update Form");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

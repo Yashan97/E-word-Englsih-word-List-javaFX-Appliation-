@@ -11,22 +11,29 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="515.0" prefWidth="841.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddFormController">
     <children>
-        <AnchorPane layoutX="251.0" prefHeight="50.0" prefWidth="590.0" style="-fx-background-color: #34495e; -fx-background-radius: 0px 0px 0px 50px;">
-            <children>
-                <TextField layoutX="258.0" layoutY="11.0" prefHeight="26.0" prefWidth="218.0" promptText="Search " style="-fx-background-radius: 10px;" />
-                <JFXButton layoutX="459.0" layoutY="11.0" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #f1c40f; -fx-background-radius: 30px;" text="Search" />
-                <ImageView fitHeight="26.0" fitWidth="20.0" layoutX="438.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
-                    <image>
-                        <Image url="@../Icon/search.png" />
-                    </image>
-                </ImageView>
-            </children>
+        <AnchorPane layoutX="258.0" prefHeight="98.0" prefWidth="583.0" style="-fx-background-color: #34495e; -fx-background-radius: 0px 0px 0px 50px;">
+         <children>
+            <AnchorPane layoutX="123.0" layoutY="16.0" prefHeight="61.0" prefWidth="459.0" style="-fx-background-color: #f1c40f; -fx-background-radius: 50px 0px 0px 50px;">
+               <children>
+                  <Label alignment="CENTER" layoutX="120.0" layoutY="12.0" prefHeight="34.0" prefWidth="339.0" text="Add New Word Here ">
+                     <font>
+                        <Font name="Cambria Math" size="29.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="50.0" fitWidth="62.0" layoutX="82.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icon/bookadd.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
         </AnchorPane>
         <AnchorPane layoutX="-11.0" prefHeight="522.0" prefWidth="258.0" style="-fx-background-radius: 0px  50px 50px 0px; -fx-background-color: #34495e;">
             <children>
                 <JFXButton alignment="CENTER" layoutX="-18.0" layoutY="180.0" onAction="#btnHome" prefHeight="34.0" prefWidth="170.0" style="-fx-background-color: #3498db; -fx-background-radius: 30px;" text="Home" />
                 <JFXButton layoutX="-23.0" layoutY="272.0" prefHeight="34.0" prefWidth="207.0" style="-fx-background-color: #f1c40f; -fx-background-radius: 30px;" text="Update" />
-                <JFXButton alignment="CENTER" layoutX="-36.0" layoutY="319.0" prefHeight="34.0" prefWidth="201.0" style="-fx-background-color: #e74c3c; -fx-background-radius: 30px;" text="Delete" />
+                <JFXButton alignment="CENTER" layoutX="-36.0" layoutY="319.0" onAction="#btnDelete" prefHeight="34.0" prefWidth="201.0" style="-fx-background-color: #e74c3c; -fx-background-radius: 30px;" text="Delete" />
                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f1c40f" height="107.0" layoutX="-32.0" layoutY="21.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="272.0" />
                 <Label layoutX="16.0" layoutY="34.0" prefHeight="38.0" prefWidth="126.0" text="E-WORDS " textFill="#534d4d">
                     <font>
@@ -66,28 +73,12 @@
             </ImageView>
             </children>
         </AnchorPane>
-        <AnchorPane layoutX="258.0" layoutY="64.0" prefHeight="452.0" prefWidth="582.0" style="-fx-background-color: #34495e; -fx-background-radius: 50px 0px 0px 50px;">
+        <AnchorPane layoutX="258.0" layoutY="124.0" prefHeight="298.0" prefWidth="583.0" style="-fx-background-color: #34495e; -fx-background-radius: 50px 0px 0px 50px;">
          <children>
-            <TextField fx:id="txtNewWord" layoutX="33.0" layoutY="112.0" prefHeight="26.0" prefWidth="218.0" promptText="Enter new Word" style="-fx-background-radius: 10px;" />
-            <TextField fx:id="txtMeaningOfWord" layoutX="32.0" layoutY="163.0" prefHeight="26.0" prefWidth="258.0" promptText="Example with Word" style="-fx-background-radius: 10px;" />
-            <TextField fx:id="txtSinhalaMean" layoutX="32.0" layoutY="213.0" prefHeight="26.0" prefWidth="218.0" promptText="Sinhala  Meaning " style="-fx-background-radius: 10px;" />
-            <AnchorPane layoutX="21.0" layoutY="10.0" prefHeight="58.0" prefWidth="562.0" style="-fx-background-color: #7ed6df; -fx-background-radius: 50px 0px 0px 50px;">
-               <children>
-                  <Label alignment="CENTER" layoutX="120.0" layoutY="12.0" prefHeight="34.0" prefWidth="339.0" text="Add New Word Here ">
-                     <font>
-                        <Font name="Cambria Math" size="29.0" />
-                     </font>
-                  </Label>
-                  <ImageView fitHeight="50.0" fitWidth="62.0" layoutX="82.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Icon/bookadd.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </AnchorPane>
-            <JFXButton layoutX="477.0" layoutY="396.0" onAction="#btnAddNewWords" prefHeight="34.0" prefWidth="74.0" style="-fx-background-color: #2ecc71; -fx-background-radius: 30px;" text="Add" />
-            <JFXButton layoutX="271.0" layoutY="112.0" onAction="#btnSearchQuic" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #f1c40f; -fx-background-radius: 30px;" text="Search" />
-            <AnchorPane layoutX="376.0" layoutY="108.0" prefHeight="34.0" prefWidth="207.0" style="-fx-background-color: #ff9f43; -fx-background-radius: 50px 0px 0px 50px;">
+            <TextField fx:id="txtNewWord" layoutX="32.0" layoutY="64.0" prefHeight="26.0" prefWidth="218.0" promptText="Enter new Word" style="-fx-background-radius: 10px;" />
+            <TextField fx:id="txtMeaningOfWord" layoutX="32.0" layoutY="109.0" prefHeight="26.0" prefWidth="258.0" promptText="Example with Word" style="-fx-background-radius: 10px;" />
+            <TextField fx:id="txtSinhalaMean" layoutX="32.0" layoutY="155.0" prefHeight="26.0" prefWidth="218.0" promptText="Sinhala  Meaning " style="-fx-background-radius: 10px;" />
+            <AnchorPane layoutX="376.0" layoutY="60.0" prefHeight="34.0" prefWidth="207.0" style="-fx-background-color: #ff9f43; -fx-background-radius: 50px 0px 0px 50px;">
                <children>
                   <ImageView fitHeight="26.0" fitWidth="37.0" layoutX="22.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -101,9 +92,9 @@
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="375.0" layoutY="162.0" prefHeight="34.0" prefWidth="207.0" style="-fx-background-color: #badc58; -fx-background-radius: 50px 0px 0px 50px;">
+            <AnchorPane layoutX="375.0" layoutY="105.0" prefHeight="34.0" prefWidth="207.0" style="-fx-background-color: #badc58; -fx-background-radius: 50px 0px 0px 50px;">
                <children>
-                  <Label fx:id="lblDate" layoutX="57.0" layoutY="5.0" prefHeight="25.0" prefWidth="132.0" text="Date">
+                  <Label fx:id="lblDate" layoutX="58.0" layoutY="5.0" prefHeight="25.0" prefWidth="132.0" text="Date">
                      <font>
                         <Font size="13.0" />
                      </font>
@@ -117,5 +108,10 @@
             </AnchorPane>
          </children>
         </AnchorPane>
+      <AnchorPane layoutX="258.0" layoutY="437.0" prefHeight="78.0" prefWidth="583.0" style="-fx-background-color: #34495e; -fx-background-radius: 50px 0px 0px 0px;">
+         <children>
+            <JFXButton fx:id="btnAdd" layoutX="494.0" layoutY="17.0" onAction="#btnAddNewWords" prefHeight="34.0" prefWidth="74.0" style="-fx-background-color: #2ecc71; -fx-background-radius: 30px;" text="Add" />
+         </children>
+      </AnchorPane>
     </children>
 </AnchorPane>

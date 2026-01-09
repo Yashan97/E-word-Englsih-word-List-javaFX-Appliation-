@@ -10,6 +10,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.WordList;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -32,12 +33,17 @@ public class ViewAllWords implements Initializable {
 
     List<WordList> wordLists =new ArrayList<>();
 
-    public void btnHome(ActionEvent actionEvent) {
+    public void btnHome(ActionEvent event) {
+        try {
+            DBConnection.getInstance().switchWindow(event,"/view/mainFxmlForm.fxml" , "Home page");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    public void btnReload(ActionEvent actionEvent) {
-        loadTable();
-    }
+
 
     private void loadTable() {
         ResultSet resultSet;
@@ -68,4 +74,19 @@ public class ViewAllWords implements Initializable {
     }
 
 
+    public void btnAdd(ActionEvent event) {
+        try {
+            DBConnection.getInstance().switchWindow(event,"/view/addForm.fxml" ,"Add Form");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void btnUpdate(ActionEvent event) {
+    }
+
+    public void btnDelete(ActionEvent event) {
+    }
 }

@@ -1,22 +1,33 @@
 package controller;
 
+import com.jfoenix.controls.JFXButton;
 import db.DBConnection;
 import javafx.event.ActionEvent;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import java.io.IOException;
+import java.net.URL;
 import java.sql.*;
+import java.util.ResourceBundle;
 
-public class AddFormController {
+public class AddFormController implements Initializable {
 
     public TextField txtNewWord;
     public TextField txtMeaningOfWord;
     public TextField txtSinhalaMean;
     public Label lblAvailable;
     public Label lblDate;
+    public JFXButton btnAdd;
 
-
+    private boolean isWordExists(String word) throws SQLException {
+        Connection connection = DBConnection.getInstance().getConnection();
+        PreparedStatement ps = connection.prepareStatement("SELECT * FROM Wordlist WHERE new_word = ?");
+        ps.setString(1, word);
+        ResultSet rs = ps.executeQuery();
+        return rs.next();
+    }
 
     public void btnHome(ActionEvent event) throws IOException {
         try {
@@ -27,21 +38,36 @@ public class AddFormController {
     }
 
     public void btnAddNewWords(ActionEvent actionEvent) throws SQLException {
-        Connection connection = DBConnection.getInstance().getConnection();
-        PreparedStatement psTm = connection.prepareStatement("INSERT INTO Wordlist(new_word, meaningOfWord, sinhala_Meaning) VALUES(?,?,?)");
-        psTm.setString(1,txtNewWord.getText());
-        psTm.setString(2,txtMeaningOfWord.getText());
-        psTm.setString(3,txtSinhalaMean.getText());
 
-        if (psTm.executeUpdate()>0){
-            new Alert(Alert.AlertType.INFORMATION,"Add New Word !").show();
+       String newWord = txtNewWord.getText().trim();
+
+        if (newWord.isEmpty()) {
+            new Alert(Alert.AlertType.WARNING, "Please enter a word").show();
+            return;
+        }
+        if (isWordExists(newWord)) {
+            new Alert(Alert.AlertType.WARNING, "Word already exists!").show();
             txtNewWord.setText("");
             txtMeaningOfWord.setText("");
             txtSinhalaMean.setText("");
-        }else{
-            new Alert(Alert.AlertType.ERROR,"ERROR").show();
+            return;
         }
 
+        Connection connection = DBConnection.getInstance().getConnection();
+        PreparedStatement psTm = connection.prepareStatement("INSERT INTO Wordlist (new_word, meaningOfWord, sinhala_Meaning) VALUES (?,?,?)");
+        psTm.setString(1, txtNewWord.getText());
+        psTm.setString(2, txtMeaningOfWord.getText());
+        psTm.setString(3, txtSinhalaMean.getText());
+        int i = psTm.executeUpdate();
+
+        if (i > 0) {
+            new Alert(Alert.AlertType.INFORMATION, "Add New Word!").show();
+            txtNewWord.clear();
+            txtMeaningOfWord.clear();
+            txtSinhalaMean.clear();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "ERROR").show();
+        }
     }
 
 
@@ -53,26 +79,18 @@ public class AddFormController {
         }
     }
 
-    public void btnSearchQuic(ActionEvent event) throws SQLException {
-        Connection connection = DBConnection.getInstance().getConnection();
-        PreparedStatement psTm = connection.prepareStatement("SELECT * from wordlist WHERE new_word LIKE ?");
-        psTm.setString(1,"%"+txtNewWord.getText()+"%");
-        ResultSet resultSet = psTm.executeQuery();
-        if (resultSet.next()){
-            lblAvailable.setText("Available");
-            txtNewWord.setText(resultSet.getString("new_word"));
-            txtMeaningOfWord.setText(resultSet.getString("meaningOfWord"));
-            txtSinhalaMean.setText(resultSet.getString("sinhala_Meaning"));
-            lblDate.setText(resultSet.getString("created_date"));
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        btnAdd.setDisable(false);
+    }
 
-        }else {
-            lblAvailable.setText("Not Available");
-            txtSinhalaMean.setText("");
-            txtMeaningOfWord.setText("");
-            lblDate.setText("Date");
+    public void btnDelete(ActionEvent event) {
+        try {
+            DBConnection.getInstance().switchWindow(event, "/view/UpdateFormController.fxml","Update Form");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
-        resultSet.close();
-        psTm.close();
-        connection.close();
     }
 }

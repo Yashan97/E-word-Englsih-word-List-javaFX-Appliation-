@@ -17,26 +17,21 @@
          <children>
             <TextField layoutX="258.0" layoutY="16.0" prefHeight="26.0" prefWidth="218.0" promptText="Search " style="-fx-background-radius: 10px;" />
             <JFXButton layoutX="459.0" layoutY="16.0" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #f1c40f; -fx-background-radius: 30px;" text="Search" />
-            <ImageView fitHeight="26.0" fitWidth="20.0" layoutX="438.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
-               <image>
-                  <Image url="@../Icon/search.png" />
-               </image>
-            </ImageView>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="-11.0" prefHeight="522.0" prefWidth="258.0" style="-fx-background-radius: 0px  50px 50px 0px; -fx-background-color: #34495e;">
          <children>
-            <JFXButton alignment="CENTER_RIGHT" layoutX="-18.0" layoutY="180.0" onAction="#btnHome" prefHeight="34.0" prefWidth="170.0" style="-fx-background-color: #3498db; -fx-background-radius: 30px;" text="Home" />
-            <JFXButton layoutX="-13.0" layoutY="227.0" prefHeight="34.0" prefWidth="207.0" style="-fx-background-color: #2ecc71; -fx-background-radius: 30px;" text="Add" />
-            <JFXButton layoutX="-23.0" layoutY="272.0" prefHeight="34.0" prefWidth="207.0" style="-fx-background-color: #f1c40f; -fx-background-radius: 30px;" text="Update" />
-            <JFXButton alignment="CENTER" layoutX="-36.0" layoutY="319.0" prefHeight="34.0" prefWidth="201.0" style="-fx-background-color: #e74c3c; -fx-background-radius: 30px;" text="Delete" />
+            <JFXButton alignment="CENTER" layoutX="-18.0" layoutY="180.0" onAction="#btnHome" prefHeight="34.0" prefWidth="170.0" style="-fx-background-color: #3498db; -fx-background-radius: 30px;" text="Home" />
+            <JFXButton layoutX="-13.0" layoutY="227.0" onAction="#btnAdd" prefHeight="34.0" prefWidth="207.0" style="-fx-background-color: #2ecc71; -fx-background-radius: 30px;" text="Add" />
+            <JFXButton layoutX="-23.0" layoutY="272.0" onAction="#btnUpdate" prefHeight="34.0" prefWidth="207.0" style="-fx-background-color: #f1c40f; -fx-background-radius: 30px;" text="Update" />
+            <JFXButton alignment="CENTER" layoutX="-36.0" layoutY="319.0" onAction="#btnDelete" prefHeight="34.0" prefWidth="201.0" style="-fx-background-color: #e74c3c; -fx-background-radius: 30px;" text="Delete" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f1c40f" height="107.0" layoutX="-32.0" layoutY="21.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="272.0" />
             <Label layoutX="16.0" layoutY="34.0" prefHeight="38.0" prefWidth="126.0" text="E-WORDS " textFill="#534d4d">
                <font>
                   <Font name="System Bold" size="21.0" />
                </font>
             </Label>
-            <Label layoutX="32.0" layoutY="55.0" prefHeight="38.0" prefWidth="170.0" text="Collection System " textFill="#534d4d">
+            <Label layoutX="19.0" layoutY="58.0" prefHeight="38.0" prefWidth="126.0" text="Collection System " textFill="#534d4d">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -61,11 +56,16 @@
                   <Image url="@../Icon/Delete.png" />
                </image>
             </ImageView>
+            <ImageView fitHeight="80.0" fitWidth="71.0" layoutX="148.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
+               <image>
+                  <Image url="@../Icon/book.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="263.0" layoutY="70.0" prefHeight="452.0" prefWidth="582.0" style="-fx-background-color: #34495e; -fx-background-radius: 50px 0px 0px 50px;">
          <children>
-            <TableView fx:id="tblAllWord" layoutX="43.0" layoutY="46.0" prefHeight="344.0" prefWidth="516.0" style="-fx-background-color: #bdc3c7; -fx-background-radius: 0px  0px 0px 50px;">
+            <TableView fx:id="tblAllWord" layoutX="43.0" layoutY="46.0" prefHeight="386.0" prefWidth="516.0" style="-fx-background-color: #bdc3c7; -fx-background-radius: 0px  0px 0px 50px;">
               <columns>
                 <TableColumn fx:id="colWord" prefWidth="121.0" text="English Word" />
                 <TableColumn fx:id="colMeaning" minWidth="0.0" prefWidth="248.0" text="Meaning of Word" />
@@ -77,12 +77,6 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <JFXButton alignment="CENTER_RIGHT" layoutX="469.0" layoutY="403.0" onAction="#btnReload" prefHeight="34.0" prefWidth="86.0" style="-fx-background-color: #f1c40f; -fx-background-radius: 30px;" text="Reload" />
-            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="481.0" layoutY="410.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
-               <image>
-                  <Image url="@../Icon/refresh.png" />
-               </image>
-            </ImageView>
          </children>
       </AnchorPane>
    </children>
