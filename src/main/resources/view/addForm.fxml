@@ -33,7 +33,7 @@
                         <Font name="System Bold" size="21.0" />
                     </font>
                 </Label>
-                <Label layoutX="32.0" layoutY="55.0" prefHeight="38.0" prefWidth="170.0" text="Collection System " textFill="#534d4d">
+                <Label layoutX="20.0" layoutY="57.0" prefHeight="38.0" prefWidth="170.0" text="Collection System " textFill="#534d4d">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
@@ -59,12 +59,17 @@
                   <Image url="@../Icon/view.png" />
                </image>
             </ImageView>
+            <ImageView fitHeight="68.0" fitWidth="74.0" layoutX="150.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/book.png" />
+               </image>
+            </ImageView>
             </children>
         </AnchorPane>
         <AnchorPane layoutX="263.0" layoutY="70.0" prefHeight="452.0" prefWidth="582.0" style="-fx-background-color: #34495e; -fx-background-radius: 50px 0px 0px 50px;">
          <children>
             <TextField fx:id="txtNewWord" layoutX="33.0" layoutY="112.0" prefHeight="26.0" prefWidth="218.0" promptText="Enter new Word" style="-fx-background-radius: 10px;" />
-            <TextField fx:id="txtMeaningOfWord" layoutX="32.0" layoutY="163.0" prefHeight="26.0" prefWidth="218.0" promptText="Meaning Of Word" style="-fx-background-radius: 10px;" />
+            <TextField fx:id="txtMeaningOfWord" layoutX="32.0" layoutY="163.0" prefHeight="26.0" prefWidth="258.0" promptText="Example with Word" style="-fx-background-radius: 10px;" />
             <TextField fx:id="txtSinhalaMean" layoutX="32.0" layoutY="213.0" prefHeight="26.0" prefWidth="218.0" promptText="Sinhala  Meaning " style="-fx-background-radius: 10px;" />
             <AnchorPane layoutX="21.0" layoutY="10.0" prefHeight="58.0" prefWidth="562.0" style="-fx-background-color: #7ed6df; -fx-background-radius: 50px 0px 0px 50px;">
                <children>
@@ -73,9 +78,29 @@
                         <Font name="Cambria Math" size="29.0" />
                      </font>
                   </Label>
+                  <ImageView fitHeight="50.0" fitWidth="62.0" layoutX="82.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icon/bookadd.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
             <JFXButton layoutX="477.0" layoutY="396.0" onAction="#btnAddNewWords" prefHeight="34.0" prefWidth="74.0" style="-fx-background-color: #2ecc71; -fx-background-radius: 30px;" text="Add" />
+            <JFXButton layoutX="271.0" layoutY="112.0" onAction="#btnSearchQuic" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #f1c40f; -fx-background-radius: 30px;" text="Search" />
+            <AnchorPane layoutX="376.0" layoutY="108.0" prefHeight="34.0" prefWidth="207.0" style="-fx-background-color: #ff9f43; -fx-background-radius: 50px 0px 0px 50px;">
+               <children>
+                  <ImageView fitHeight="26.0" fitWidth="37.0" layoutX="23.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icon/available.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lblAvailable" alignment="CENTER" layoutX="66.0" layoutY="5.0" prefHeight="20.0" prefWidth="117.0" text="Available">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
          </children>
         </AnchorPane>
     </children>
