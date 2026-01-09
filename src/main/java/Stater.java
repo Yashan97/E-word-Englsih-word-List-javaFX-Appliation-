@@ -19,6 +19,7 @@ public class Stater extends Application {
             throw new RuntimeException(e);
         }
         stage.setTitle("EWords Application");
+        stage.setResizable(false);
         stage.show();
     }
 }

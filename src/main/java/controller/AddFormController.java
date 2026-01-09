@@ -2,15 +2,9 @@ package controller;
 
 import db.DBConnection;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.sql.*;
 
@@ -20,29 +14,16 @@ public class AddFormController {
     public TextField txtMeaningOfWord;
     public TextField txtSinhalaMean;
     public Label lblAvailable;
-
-    public void switchWindow(ActionEvent event, String fxmlPath, String title) throws IOException {
-
-
-        Stage newStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource(fxmlPath));
-        newStage.setScene(new Scene(root));
-        newStage.setTitle(title);
-        newStage.show();
+    public Label lblDate;
 
 
-        Stage currentStage = (Stage) ((Node) event.getSource())
-                .getScene()
-                .getWindow();
-        currentStage.close();
-    }
-
-    public void btnSearchTop(ActionEvent actionEvent) {
-
-    }
 
     public void btnHome(ActionEvent event) throws IOException {
-        switchWindow(event, "/view/mainFxmlForm.fxml", "Home Form");
+        try {
+            DBConnection.getInstance().switchWindow(event, "/view/mainFxmlForm.fxml", "Home Form");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void btnAddNewWords(ActionEvent actionEvent) throws SQLException {
@@ -65,7 +46,11 @@ public class AddFormController {
 
 
     public void btnView(ActionEvent event) throws IOException {
-        switchWindow(event,"/view/viewAllWords.fxml", "View All Word");
+        try {
+            DBConnection.getInstance().switchWindow(event,"/view/viewAllWords.fxml", "View All Word");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void btnSearchQuic(ActionEvent event) throws SQLException {
@@ -75,13 +60,16 @@ public class AddFormController {
         ResultSet resultSet = psTm.executeQuery();
         if (resultSet.next()){
             lblAvailable.setText("Available");
+            txtNewWord.setText(resultSet.getString("new_word"));
             txtMeaningOfWord.setText(resultSet.getString("meaningOfWord"));
             txtSinhalaMean.setText(resultSet.getString("sinhala_Meaning"));
+            lblDate.setText(resultSet.getString("created_date"));
 
         }else {
             lblAvailable.setText("Not Available");
             txtSinhalaMean.setText("");
             txtMeaningOfWord.setText("");
+            lblDate.setText("Date");
         }
         resultSet.close();
         psTm.close();

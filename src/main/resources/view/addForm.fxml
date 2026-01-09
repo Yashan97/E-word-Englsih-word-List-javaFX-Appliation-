@@ -11,11 +11,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="515.0" prefWidth="841.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddFormController">
     <children>
-        <AnchorPane layoutX="251.0" prefHeight="58.0" prefWidth="590.0" style="-fx-background-color: #34495e; -fx-background-radius: 0px 0px 0px 50px;">
+        <AnchorPane layoutX="251.0" prefHeight="50.0" prefWidth="590.0" style="-fx-background-color: #34495e; -fx-background-radius: 0px 0px 0px 50px;">
             <children>
-                <TextField layoutX="258.0" layoutY="16.0" prefHeight="26.0" prefWidth="218.0" promptText="Search " style="-fx-background-radius: 10px;" />
-                <JFXButton layoutX="459.0" layoutY="16.0" onAction="#btnSearchTop" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #f1c40f; -fx-background-radius: 30px;" text="Search" />
-                <ImageView fitHeight="26.0" fitWidth="20.0" layoutX="438.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
+                <TextField layoutX="258.0" layoutY="11.0" prefHeight="26.0" prefWidth="218.0" promptText="Search " style="-fx-background-radius: 10px;" />
+                <JFXButton layoutX="459.0" layoutY="11.0" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #f1c40f; -fx-background-radius: 30px;" text="Search" />
+                <ImageView fitHeight="26.0" fitWidth="20.0" layoutX="438.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
                     <image>
                         <Image url="@../Icon/search.png" />
                     </image>
@@ -66,7 +66,7 @@
             </ImageView>
             </children>
         </AnchorPane>
-        <AnchorPane layoutX="263.0" layoutY="70.0" prefHeight="452.0" prefWidth="582.0" style="-fx-background-color: #34495e; -fx-background-radius: 50px 0px 0px 50px;">
+        <AnchorPane layoutX="258.0" layoutY="64.0" prefHeight="452.0" prefWidth="582.0" style="-fx-background-color: #34495e; -fx-background-radius: 50px 0px 0px 50px;">
          <children>
             <TextField fx:id="txtNewWord" layoutX="33.0" layoutY="112.0" prefHeight="26.0" prefWidth="218.0" promptText="Enter new Word" style="-fx-background-radius: 10px;" />
             <TextField fx:id="txtMeaningOfWord" layoutX="32.0" layoutY="163.0" prefHeight="26.0" prefWidth="258.0" promptText="Example with Word" style="-fx-background-radius: 10px;" />
@@ -89,16 +89,30 @@
             <JFXButton layoutX="271.0" layoutY="112.0" onAction="#btnSearchQuic" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #f1c40f; -fx-background-radius: 30px;" text="Search" />
             <AnchorPane layoutX="376.0" layoutY="108.0" prefHeight="34.0" prefWidth="207.0" style="-fx-background-color: #ff9f43; -fx-background-radius: 50px 0px 0px 50px;">
                <children>
-                  <ImageView fitHeight="26.0" fitWidth="37.0" layoutX="23.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="26.0" fitWidth="37.0" layoutX="22.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Icon/available.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lblAvailable" alignment="CENTER" layoutX="66.0" layoutY="5.0" prefHeight="20.0" prefWidth="117.0" text="Available">
+                  <Label fx:id="lblAvailable" alignment="CENTER" layoutX="66.0" layoutY="5.0" prefHeight="20.0" prefWidth="117.0" text="Status">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="375.0" layoutY="162.0" prefHeight="34.0" prefWidth="207.0" style="-fx-background-color: #badc58; -fx-background-radius: 50px 0px 0px 50px;">
+               <children>
+                  <Label fx:id="lblDate" layoutX="57.0" layoutY="5.0" prefHeight="25.0" prefWidth="132.0" text="Date">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="26.0" fitWidth="37.0" layoutX="23.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icon/clock_621685.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
          </children>

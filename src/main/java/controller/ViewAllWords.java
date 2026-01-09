@@ -31,9 +31,6 @@ public class ViewAllWords implements Initializable {
     }
 
     List<WordList> wordLists =new ArrayList<>();
-    public void btnSearchTop(ActionEvent actionEvent) {
-
-    }
 
     public void btnHome(ActionEvent actionEvent) {
     }

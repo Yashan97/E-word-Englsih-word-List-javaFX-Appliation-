@@ -2,14 +2,9 @@ package controller;
 
 import db.DBConnection;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
-import javafx.stage.Stage;
 
 
 import java.io.IOException;
@@ -24,38 +19,36 @@ public class MainFormController implements Initializable {
     public Label lblstatus;
     public Label lblDate;
 
-    public void switchWindow(ActionEvent event, String fxmlPath, String title) throws IOException {
 
 
-        Stage newStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource(fxmlPath));
-        newStage.setScene(new Scene(root));
-        newStage.setTitle(title);
-        newStage.show();
-
-
-        Stage currentStage = (Stage) ((Node) event.getSource())
-                .getScene()
-                .getWindow();
-        currentStage.close();
-    }
-
-    public void btnHome(ActionEvent event) throws IOException {
-      switchWindow(event,"/view/mainFxmlForm.fxml" , "Home Window");
+    public void btnHome(ActionEvent event) throws IOException, SQLException {
+        DBConnection.getInstance().switchWindow(event,"/view/mainFxmlForm.fxml" , "Home Window");
 
     }
 
     public void btnView(ActionEvent event) throws IOException {
-        switchWindow(event,"/view/viewAllWords.fxml" , "view Form");
+        try {
+            DBConnection.getInstance().switchWindow(event,"/view/viewAllWords.fxml" , "view Form");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    public void btnSearchTop(ActionEvent actionEvent) {
-        System.out.println("Search clicked");
+    public void btnSearchTop(ActionEvent event) throws IOException {
+        try {
+            DBConnection.getInstance().switchWindow(event,"/view/searchForm.fxml", "Search Form ");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
     public void btnAdd(ActionEvent event) throws IOException {
-        switchWindow(event, "/view/addForm.fxml" , "Add Word Form");
+        try {
+            DBConnection.getInstance().switchWindow(event, "/view/addForm.fxml" , "Add Word Form");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
     }
     public void countWordList() throws SQLException {
