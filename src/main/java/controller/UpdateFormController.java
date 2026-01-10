@@ -97,6 +97,25 @@ public class UpdateFormController {
     }
 
     public void btnDeleteWord(ActionEvent event) {
+        try {
+            Connection connection = DBConnection.getInstance().getConnection();
+            PreparedStatement psTm = connection.prepareStatement("DELETE FROM wordlist WHERE id = ? ");
+            psTm.setString(1,lblId.getText());
+            int i = psTm.executeUpdate();
+            if (i>0){
+                new Alert(Alert.AlertType.INFORMATION,"Word Delete SuccessFully").show();
+                txtSinhalaMean.clear();
+                txtNewWord.clear();
+                txtMeaningOfWord.clear();
+            }else {
+                new Alert(Alert.AlertType.ERROR,"Word Not Found").show();
+                txtSinhalaMean.clear();
+                txtNewWord.clear();
+                txtMeaningOfWord.clear();
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 }
